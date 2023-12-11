@@ -29,8 +29,8 @@ namespace ReportsInPDF
 
             row.Cells["Quantity"].Value = txtQuantity.Text;
             row.Cells["Description"].Value = txtDescription.Text;
-            row.Cells["UnitPrice"].Value = txtPrice.Text;
-            row.Cells["Amount"].Value = decimal.Parse(txtQuantity.Text)* decimal.Parse(txtPrice.Text);
+            row.Cells["UnitPrice"].Value = txtPrice.Text.Replace('.', ',');
+            row.Cells["Amount"].Value = decimal.Parse(txtQuantity.Text) * decimal.Parse(txtPrice.Text.Replace('.', ','));
 
             txtDescription.Text = "";
             txtPrice.Text = "";
@@ -52,6 +52,28 @@ namespace ReportsInPDF
             saveFileDialog.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
             string pageHTML_text = Properties.Resources.template.ToString();
+
+            pageHTML_text =pageHTML_text.Replace("@CLIENT",txtnames.Text);
+            pageHTML_text =pageHTML_text.Replace("@DOCUMENT",txtdocument.Text);
+            pageHTML_text =pageHTML_text.Replace("@DATE", DateTime.Now.ToString("dd/MM/yyyy"));
+            
+            string rows = string.Empty;
+            decimal total = 0;
+            foreach (DataGridViewRow row in dgvproducts.Rows)
+            {
+                rows += "<tr>";
+                rows += "<td>" + row.Cells["Quantity"].Value.ToString() + "</td>";
+                rows += "<td>" + row.Cells["Description"].Value.ToString() + "</td>";
+                rows += "<td>" + row.Cells["UnitPrice"].Value.ToString() + "</td>";
+                rows += "<td>" + row.Cells["Amount"].Value.ToString() + "</td>";
+                rows += "</tr>";
+                total += decimal.Parse(row.Cells["Amount"].Value.ToString());
+
+            }
+
+
+            pageHTML_text =pageHTML_text.Replace("@ROWS", rows);
+            pageHTML_text =pageHTML_text.Replace("@TOTAL", total.ToString());
 
             if(saveFileDialog.ShowDialog() == DialogResult.OK)
             {

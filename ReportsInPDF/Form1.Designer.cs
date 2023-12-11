@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupClientDetails = new System.Windows.Forms.GroupBox();
             this.Document = new System.Windows.Forms.Label();
             this.txtdocument = new System.Windows.Forms.TextBox();
@@ -158,10 +160,36 @@
             // 
             // dgvproducts
             // 
-            this.dgvproducts.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvproducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproducts.AllowUserToAddRows = false;
+            this.dgvproducts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvproducts.ColumnHeadersHeight = 30;
+            this.dgvproducts.EnableHeadersVisualStyles = false;
             this.dgvproducts.Location = new System.Drawing.Point(61, 247);
+            this.dgvproducts.MultiSelect = false;
             this.dgvproducts.Name = "dgvproducts";
+            this.dgvproducts.ReadOnly = true;
+            this.dgvproducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvproducts.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgvproducts.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvproducts.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvproducts.RowTemplate.Height = 30;
             this.dgvproducts.Size = new System.Drawing.Size(443, 161);
             this.dgvproducts.TabIndex = 1;
             // 

@@ -22,12 +22,23 @@ namespace ReportsInPDF
             int rowIndex= dgvproducts.Rows.Add();
             DataGridViewRow row = dgvproducts.Rows[rowIndex];
 
+            row.Cells["Quantity"].Value = txtQuantity.Text;
+            row.Cells["Description"].Value = txtDescription.Text;
+            row.Cells["UnitPrice"].Value = txtPrice.Text;
+            row.Cells["Amount"].Value = decimal.Parse(txtQuantity.Text)* decimal.Parse(txtPrice.Text);
+
+            txtDescription.Text = "";
+            txtPrice.Text = "";
+            txtQuantity.Text = "";
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            dgvproducts.Columns.Add("Quantity", "Quantity");
+            dgvproducts.Columns.Add("Description", "Description");
+            dgvproducts.Columns.Add("UnitPrice", "Unit Price");
+            dgvproducts.Columns.Add("Amount", "Amount");
         }
     }
 }

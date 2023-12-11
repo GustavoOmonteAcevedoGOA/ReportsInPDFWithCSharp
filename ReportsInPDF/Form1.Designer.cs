@@ -193,6 +193,7 @@
             this.btnFinishAndPrint.TabIndex = 3;
             this.btnFinishAndPrint.Text = "Finish And Print";
             this.btnFinishAndPrint.UseVisualStyleBackColor = false;
+            this.btnFinishAndPrint.Click += new System.EventHandler(this.btnFinishAndPrint_Click);
             // 
             // Form1
             // 

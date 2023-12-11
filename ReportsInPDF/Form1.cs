@@ -40,5 +40,12 @@ namespace ReportsInPDF
             dgvproducts.Columns.Add("UnitPrice", "Unit Price");
             dgvproducts.Columns.Add("Amount", "Amount");
         }
+
+        private void btnFinishAndPrint_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
+            saveFileDialog.ShowDialog();
+        }
     }
 }

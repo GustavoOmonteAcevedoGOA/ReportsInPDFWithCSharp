@@ -61,21 +61,44 @@ namespace ReportsInPDF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FreeLogo {
+            get {
+                object obj = ResourceManager.GetObject("FreeLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
         ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
         ///    &lt;title&gt;Document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///        table.border th {
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
+        ///
+        ///        table.border td {
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
+        ///
+        ///    &lt;/style&gt;
         ///&lt;/head&gt;
         ///
         ///&lt;body&gt;
-        ///
-        ///&lt;/body&gt;
-        ///
-        ///&lt;/html&gt;
-        ///.
+        ///    &lt;table style=&quot;width: 100%;&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td style=&quot;width: 20%;&quot;&gt;&lt;/td&gt;
+        ///            &lt;t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string template {
             get {

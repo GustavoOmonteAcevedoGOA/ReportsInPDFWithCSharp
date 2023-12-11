@@ -87,6 +87,12 @@ namespace ReportsInPDF
 
                     pdfDoc.Add(new Phrase(""));
 
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.FreeLogo,System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(80, 60);
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
+                    pdfDoc.Add(img);
+
                     using (StringReader sr = new StringReader(pageHTML_text))
                     {
                         XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);

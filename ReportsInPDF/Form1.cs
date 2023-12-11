@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.xml;
+using System.IO;
+
 namespace ReportsInPDF
 {
     public partial class Form1 : Form
@@ -45,7 +50,30 @@ namespace ReportsInPDF
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
+
+            string pageHTML_text = "<table><tr><td>Hello World</td></tr></table>";
+
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create)) 
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                    pdfDoc.Open();
+
+                    pdfDoc.Add(new Phrase("Hi Everyone"));
+                    pdfDoc.Close();
+                    stream.Close();
+
+                }
+
+
+
+            }
             saveFileDialog.ShowDialog();
+
         }
     }
 }

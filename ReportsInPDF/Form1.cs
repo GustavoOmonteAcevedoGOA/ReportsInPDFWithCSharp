@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.xml;
+using iTextSharp.tool.xml;
 using System.IO;
 
 namespace ReportsInPDF
@@ -51,7 +51,7 @@ namespace ReportsInPDF
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
-            string pageHTML_text = "<table><tr><td>Hello World</td></tr></table>";
+            string pageHTML_text = Properties.Resources.template.ToString();
 
             if(saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -63,7 +63,13 @@ namespace ReportsInPDF
 
                     pdfDoc.Open();
 
-                    pdfDoc.Add(new Phrase("Hi Everyone"));
+                    pdfDoc.Add(new Phrase(""));
+
+                    using (StringReader sr = new StringReader(pageHTML_text))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                    }
+
                     pdfDoc.Close();
                     stream.Close();
 
@@ -72,7 +78,6 @@ namespace ReportsInPDF
 
 
             }
-            saveFileDialog.ShowDialog();
 
         }
     }

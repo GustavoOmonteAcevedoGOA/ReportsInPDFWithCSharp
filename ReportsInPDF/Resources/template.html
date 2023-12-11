@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+        table.border th {
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        table.border td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 20%;"></td>
+            <td style="width: 60%;" align="center">
+                <table>
+                    <tr>
+                        <td align="center">CLUB UNION</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Address Av. Costanera</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Phone: 42586546</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 20%;">
+                <table class="border" style="width: 100%;">
+                    <tr>
+                        <td align="center">Ruc: 324565</td>
+                    </tr>
+                    <tr>
+                        <td align="center">TICKET</td>
+                    </tr>
+                    <tr>
+                        <td align="center">No: 15623156454</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="20"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="1" style="width: 20%;">Client:</td>
+                        <td colspan="3" style="width: 80%; border-bottom:1px solid black">@CLIENT</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="width: 20%;">Document:</td>
+                        <td colspan="1" style="width: 30%; border-bottom:1px solid black">@DOCUMENT</td>
+                        <td colspan="1" style="width: 10%;">Date:</td>
+                        <td colspan="1" style="width: 40%; border-bottom:1px solid black">@DATE</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" height="20px"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width: 100%;">
+                    <thead style="background-color: #D8D8D8;">
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Description</th>
+                            <th>Price/Unit</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Cook</td>
+                            <td>1.2</td>
+                            <td>2.4</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Total:</td>
+                            <td>@TOTAL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
